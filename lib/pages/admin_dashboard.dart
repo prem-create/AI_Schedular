@@ -3,7 +3,7 @@ import 'package:ai_schedular/utils/over_view_box.dart';
 import 'package:ai_schedular/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
+
 
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({super.key});
@@ -39,11 +39,30 @@ class AdminDashboard extends StatelessWidget {
                     child: ListView(
                       scrollDirection: Axis.horizontal, // horizontal scrolling
                       children: [
-                        OverViewBox(color: Color(0xF1F6FEFF), heading: 'Total Enrolled Students',midText: '1500', bottomText: '+25% since last semester',),
-                        OverViewBox(color: Color(0xFFF3DEFF), heading: 'Active Faculty Members',midText: '75', bottomText: 'All faculty available this semester',),
-                        OverViewBox(color: Color(0xFFECECFF), heading: 'Total Courses Offered',midText: '150', bottomText: 'Across 12 departments',),
-                        OverViewBox(color: Color(0xE0FAF8FF), heading: 'Upcoming Deadlines',midText: '3 Critical', bottomText: 'Next submission on Oct 15',),
-                        
+                        OverViewBox(
+                          color: Color(0xF1F6FEFF),
+                          heading: 'Total Enrolled Students',
+                          midText: '1500',
+                          bottomText: '+25% since last semester',
+                        ),
+                        OverViewBox(
+                          color: Color(0xFFF3DEFF),
+                          heading: 'Active Faculty Members',
+                          midText: '75',
+                          bottomText: 'All faculty available this semester',
+                        ),
+                        OverViewBox(
+                          color: Color(0xFFECECFF),
+                          heading: 'Total Courses Offered',
+                          midText: '150',
+                          bottomText: 'Across 12 departments',
+                        ),
+                        OverViewBox(
+                          color: Color(0xE0FAF8FF),
+                          heading: 'Upcoming Deadlines',
+                          midText: '3 Critical',
+                          bottomText: 'Next submission on Oct 15',
+                        ),
                       ],
                     ),
                   ),
