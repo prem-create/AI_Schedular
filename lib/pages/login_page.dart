@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LoginPage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -155,7 +155,7 @@ Container(
                   decoration: TextDecoration.none,
                   color: Color.fromRGBO(0, 0, 0, 1)
                   ),
-                  
+                    
                     ),
                   ),
                 ),
@@ -210,7 +210,7 @@ SizedBox(height: 40.h,),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(backgroundColor:  Color.fromRGBO(158, 21, 193, 1)),
-                  onPressed: (){}, 
+                  onPressed: ()=>context.go('/admin'), 
                   child: Text('LOGIN',
                   style: TextStyle(
                     fontFamily: 'Impact',
