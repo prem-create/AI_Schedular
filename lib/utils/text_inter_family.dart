@@ -5,11 +5,15 @@ class TextInterFamily extends StatelessWidget {
   final String text;
   final int fontSize;
   final FontWeight fontWeight;
+  final double textHeight;
+  final Color? color;
   const TextInterFamily({
     super.key,
     required this.fontSize,
     required this.fontWeight,
     required this.text,
+    required this.textHeight,
+    this.color = Colors.black
   });
 
   @override
@@ -20,8 +24,9 @@ class TextInterFamily extends StatelessWidget {
         fontFamily: 'inter',
         fontWeight: fontWeight,
         fontSize: fontSize.sp,
-        color: Colors.black,
+        color: color,
         decoration: TextDecoration.none,
+        height: textHeight.sp
       ),
     );
   }

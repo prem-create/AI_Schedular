@@ -24,25 +24,29 @@ class OverViewBox extends StatelessWidget {
         border: BoxBorder.all(color: Color(0xDEE1E6FF)),
       ),
       child: Padding(
-        padding: EdgeInsets.all(49.w),
+        padding: EdgeInsets.symmetric(horizontal:49.w, vertical: 49.h),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextInterFamily(
               fontSize: 14,
               fontWeight: FontWeight.w500,
               text: heading,
+              textHeight: 1.42,
             ),
             SizedBox(height: 20.h),
             TextInterFamily(
               fontSize: 24,
               fontWeight: FontWeight.w700,
               text: midText,
+              textHeight: 1.33,
             ),
             SizedBox(height: 20.h),
             TextInterFamily(
               fontSize: 12,
               fontWeight: FontWeight.w400,
               text: bottomText,
+              textHeight: 1.33,
             ),
           ],
         ),

@@ -178,6 +178,7 @@ class _MyHomePageState extends State<LoginPage> {
                     height: 50.h,
                     width: double.infinity,
                     child: TextField(
+                      obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),

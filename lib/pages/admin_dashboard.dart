@@ -1,9 +1,11 @@
+import 'package:ai_schedular/admin_page_content/faculty_and_curriculum_management.dart';
+import 'package:ai_schedular/admin_page_content/student_information_management_box.dart';
 import 'package:ai_schedular/utils/text_inter_family.dart';
 import 'package:ai_schedular/utils/over_view_box.dart';
 import 'package:ai_schedular/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:go_router/go_router.dart';
 
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({super.key});
@@ -11,7 +13,16 @@ class AdminDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Admin Dashboard')),
+      appBar: AppBar(
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
+          IconButton(
+            onPressed: () => context.go('/'),
+            icon: Icon(Icons.logout_rounded),
+          ),
+        ],
+      ),
       backgroundColor: Colors.white,
       body: Row(
         children: [
@@ -23,50 +34,77 @@ class AdminDashboard extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 32, top: 33),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextInterFamily(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                    text: 'Admin Dashboard Overview',
-                  ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 25.h),
+                      child: TextInterFamily(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        text: 'Admin Dashboard Overview',
+                        textHeight: 1.33,
+                      ),
+                    ),
 
-                  //overview scroll view
-                  SizedBox(
-                    height: 350.h, // height of the card
-                    child: ListView(
-                      scrollDirection: Axis.horizontal, // horizontal scrolling
+                    //overview scroll view
+                    SizedBox(
+                      height: 350.h, // height of the card
+                      child: ListView(
+                        scrollDirection:
+                            Axis.horizontal, // horizontal scrolling
+                        children: [
+                          OverViewBox(
+                            color: Color(0xF1F6FEFF),
+                            heading: 'Total Enrolled Students',
+                            midText: '1500',
+                            bottomText: '+25% since last semester',
+                          ),
+                          OverViewBox(
+                            color: Color(0xFFF3DEFF),
+                            heading: 'Active Faculty Members',
+                            midText: '75',
+                            bottomText: 'All faculty available this semester',
+                          ),
+                          OverViewBox(
+                            color: Color(0xFFECECFF),
+                            heading: 'Total Courses Offered',
+                            midText: '150',
+                            bottomText: 'Across 12 departments',
+                          ),
+                          OverViewBox(
+                            color: Color(0xE0FAF8FF),
+                            heading: 'Upcoming Deadlines',
+                            midText: '3 Critical',
+                            bottomText: 'Next submission on Oct 15',
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 25.h),
+                      child: TextInterFamily(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        textHeight: 1.33,
+                        text: 'Data Management & Quick Actions',
+                      ),
+                    ),
+
+                    Row(
                       children: [
-                        OverViewBox(
-                          color: Color(0xF1F6FEFF),
-                          heading: 'Total Enrolled Students',
-                          midText: '1500',
-                          bottomText: '+25% since last semester',
-                        ),
-                        OverViewBox(
-                          color: Color(0xFFF3DEFF),
-                          heading: 'Active Faculty Members',
-                          midText: '75',
-                          bottomText: 'All faculty available this semester',
-                        ),
-                        OverViewBox(
-                          color: Color(0xFFECECFF),
-                          heading: 'Total Courses Offered',
-                          midText: '150',
-                          bottomText: 'Across 12 departments',
-                        ),
-                        OverViewBox(
-                          color: Color(0xE0FAF8FF),
-                          heading: 'Upcoming Deadlines',
-                          midText: '3 Critical',
-                          bottomText: 'Next submission on Oct 15',
-                        ),
+                        //Student information management box
+                        StudentInformationManagementBox(),
+
+                        // faculty and curriculum management box
+                        FacultyAndCurriculumManagement(),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
