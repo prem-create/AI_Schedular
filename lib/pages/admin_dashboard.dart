@@ -3,9 +3,9 @@ import 'package:ai_schedular/admin_page_content/student_information_management_b
 import 'package:ai_schedular/utils/text_inter_family.dart';
 import 'package:ai_schedular/utils/over_view_box.dart';
 import 'package:ai_schedular/widgets/drawer.dart';
+import 'package:ai_schedular/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({super.key});
@@ -13,16 +13,7 @@ class AdminDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-          IconButton(
-            onPressed: () => context.go('/'),
-            icon: Icon(Icons.logout_rounded),
-          ),
-        ],
-      ),
+      appBar: MyAppBar(),
       backgroundColor: Colors.white,
       body: Row(
         children: [

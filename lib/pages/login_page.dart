@@ -23,7 +23,7 @@ class _MyHomePageState extends State<LoginPage> {
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/login_background.png'),
+              image: AssetImage('assets/images/login_background.png'),
               // alignment: Alignment(0, -0.1),
               fit: BoxFit.fill,
             ),
@@ -51,7 +51,9 @@ class _MyHomePageState extends State<LoginPage> {
                 width: 85.w,
                 height: 85.h,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: AssetImage('assets/A.png')),
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/A.png'),
+                  ),
                   shape: BoxShape.circle,
                   color: Colors.white,
                 ),
@@ -90,7 +92,9 @@ class _MyHomePageState extends State<LoginPage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   image: DecorationImage(
-                    image: AssetImage('assets/login_popup_background.png'),
+                    image: AssetImage(
+                      'assets/images/login_popup_background.png',
+                    ),
                     fit: BoxFit.fill,
                   ),
                 ),
