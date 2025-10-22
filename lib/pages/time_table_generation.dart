@@ -2,7 +2,7 @@ import 'package:ai_schedular/extension/space_exs.dart';
 import 'package:ai_schedular/time_table_generation_page_content/generation_status.dart';
 import 'package:ai_schedular/time_table_generation_page_content/time_table_parameters.dart';
 import 'package:ai_schedular/utils/text_inter_family.dart';
-import 'package:ai_schedular/widgets/drawer.dart';
+import 'package:ai_schedular/widgets/app_drawer.dart';
 import 'package:ai_schedular/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

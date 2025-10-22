@@ -10,6 +10,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.white,
       actions: [
         IconButton(onPressed: () {}, icon: Icon(Icons.search)),
         IconButton(onPressed: () {}, icon: Icon(Icons.person)),

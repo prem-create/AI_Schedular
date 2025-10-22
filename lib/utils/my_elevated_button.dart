@@ -20,22 +20,20 @@ class MyElevatedButton extends StatelessWidget {
     return SizedBox(
       height: 40.h,
       width: width.w,
-      child: Expanded(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: buttonColor,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(6),
-            ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: buttonColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(6),
           ),
-          onPressed: () {},
-          child: TextInterFamily(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-            text: text,
-            textHeight: 1.5,
-            color: textColor,
-          ),
+        ),
+        onPressed: () {},
+        child: TextInterFamily(
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          text: text,
+          textHeight: 1.5,
+          color: textColor,
         ),
       ),
     );

@@ -2,7 +2,7 @@ import 'package:ai_schedular/admin_page_content/faculty_and_curriculum_managemen
 import 'package:ai_schedular/admin_page_content/student_information_management_box.dart';
 import 'package:ai_schedular/utils/text_inter_family.dart';
 import 'package:ai_schedular/utils/over_view_box.dart';
-import 'package:ai_schedular/widgets/drawer.dart';
+import 'package:ai_schedular/widgets/app_drawer.dart';
 import 'package:ai_schedular/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

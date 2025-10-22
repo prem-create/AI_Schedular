@@ -152,7 +152,7 @@ class GenerationStatus extends StatelessWidget {
               textHeight: 1.4,
               text: 'Estimated Generation Time',
             ),
-            30.ht,
+            20.ht,
             TextInterFamily(
               fontSize: 24,
               color: Colors.blueAccent,

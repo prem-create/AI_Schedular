@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OverViewBox extends StatelessWidget {
   final Color color;
-  final String heading, midText, bottomText;
+  final String heading, midText, bottomText; 
   const OverViewBox({
     super.key,
     required this.color,

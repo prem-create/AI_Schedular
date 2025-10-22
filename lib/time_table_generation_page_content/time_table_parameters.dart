@@ -3,7 +3,7 @@ import 'package:ai_schedular/utils/my_box.dart';
 import 'package:ai_schedular/utils/my_check_box.dart';
 import 'package:ai_schedular/utils/my_drop_down_button.dart';
 import 'package:ai_schedular/utils/my_rating_slider.dart';
-import 'package:ai_schedular/utils/text_field.dart';
+import 'package:ai_schedular/utils/my_text_field.dart';
 import 'package:ai_schedular/utils/text_inter_family.dart';
 import 'package:flutter/material.dart';
 
