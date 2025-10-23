@@ -1,5 +1,6 @@
 import 'package:ai_schedular/extension/space_exs.dart';
 import 'package:ai_schedular/utils/my_box.dart';
+import 'package:ai_schedular/utils/my_data_table.dart';
 import 'package:ai_schedular/utils/my_drop_down_button.dart';
 import 'package:ai_schedular/utils/my_elevated_button.dart';
 import 'package:ai_schedular/utils/text_inter_family.dart';
@@ -13,6 +14,35 @@ class ConflictAndScenerio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> firstRowElements = [
+      'Time',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+
+    List<List<String>> generateDummyTimetable() {
+      List<String> teachers = ['Mr. A', 'Ms. B', 'Mr. C', 'Ms. D', 'Mr. E'];
+      List<String> time = ['9-10', '10-11', '11-12', '12-1'];
+      return time.map((day) {
+        return [
+          day,
+          ...List.generate(6, (period) {
+            // randomly mark teacher or "Not Available"
+            bool available = (period + day.length) % 3 != 0;
+            return available
+                ? teachers[(period + day.length) % teachers.length]
+                : 'Not Available';
+          }),
+        ];
+      }).toList();
+    }
+
+    List<List<String>> dataCells = generateDummyTimetable();
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: MyAppBar(),
@@ -56,7 +86,8 @@ class ConflictAndScenerio extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   MyElevatedButton(
                                     text: 'Total: 3',
@@ -113,30 +144,39 @@ class ConflictAndScenerio extends StatelessWidget {
                   Divider(),
                   Row(
                     children: [
-                      MyBox(height: 1, 
-                      width: 700, 
-                      child: Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                        TextInterFamily(fontSize: 20, fontWeight: FontWeight.w600, text: 'Interactive Timetable View', textHeight: 1.4),
-                        Divider(),
-                        // MyDataTable(
-                          
-                        // )
+                      MyBox(
+                        height: 1,
+                        width: 700,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              TextInterFamily(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                                text: 'Interactive Timetable View',
+                                textHeight: 1.4,
+                              ),
+                              Divider(),
 
-                                            ],
-                                          ),
-                      )
-                  ),
-                  Divider(),
-                  MyBox(height:1,width:380,child:  Column(children: [
-            
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: MyDataTable(
+                                  topRowElements: firstRowElements,
+                                  dataCells: dataCells,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Divider(),
+                      MyBox(height: 1, width: 380, child: Column(children: [
                     ],
                   )),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

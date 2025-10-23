@@ -14,6 +14,12 @@ class StudentInformationManagementBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> topRowElements = ['ID', 'Name', 'Program'];
+
+    List<List<String>> dataCell = [
+      ['S001', 'Bhavesh Yaduvanshi', 'B.Tech CSE'],
+      ['S002', 'Rahul Sahu', 'B.tech Mech'],
+    ];
     return MyBox(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 51.h, vertical: 49.w),
@@ -77,7 +83,14 @@ class StudentInformationManagementBox extends StatelessWidget {
             5.ht,
             MyElevatedButton(text: 'Add Student'),
             10.ht,
-            Expanded(child: SingleChildScrollView(child: MyDataTable())),
+            Expanded(
+              child: SingleChildScrollView(
+                child: MyDataTable(
+                  dataCells: dataCell,
+                  topRowElements: topRowElements,
+                ),
+              ),
+            ),
           ],
         ),
       ),
